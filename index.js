@@ -50,6 +50,9 @@ const io = socket(server);
 // handle connection event
 io.on("connection", (socket) => {
     console.log("a new client connected to server", socket);
+    io.sockets.emit("message", {
+        'welcome': 'a new clinet added',
+    });
 });
 
 
