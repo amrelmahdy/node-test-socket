@@ -6,10 +6,9 @@ module.exports = {
         try {
             const msg = new Message(req.body);
             Message.saveMessage(msg, () => {
-                // handle connection event
-                /*io.sockets.emit("message", {
+                req.app.io.emit("message", {
                     'welcome': 'a new client added',
-                });*/
+                });
                 res.json(msg);
             });
         } catch (error) {

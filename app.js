@@ -50,7 +50,7 @@ const server = app.listen(app.get("port"), () => {
     console.log("app started on port ", port)
 });
 // start socket
-io = socket(server);
+const io = socket(server);
 
 io.on("connection", (socket) => {
     console.log("a new client connected to server");
