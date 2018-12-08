@@ -9,6 +9,7 @@ module.exports = {
                 req.app.io.emit("message", {
                     'welcome': 'a new client added',
                 });
+
                 res.json(msg);
             });
         } catch (error) {

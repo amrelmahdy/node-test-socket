@@ -51,7 +51,8 @@ const server = app.listen(app.get("port"), () => {
 });
 // start socket
 const io = socket(server);
-
+// Attach the io instance to your app.
+app.io = io;
 io.on("connection", (socket) => {
     console.log("a new client connected to server");
 });
