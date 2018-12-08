@@ -7,9 +7,9 @@ module.exports = {
             const msg = new Message(req.body);
             Message.saveMessage(msg, () => {
                 // handle connection event
-                io.sockets.emit("message", {
+                /*io.sockets.emit("message", {
                     'welcome': 'a new client added',
-                });
+                });*/
                 res.json(msg);
             });
         } catch (error) {
