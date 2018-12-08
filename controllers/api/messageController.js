@@ -12,7 +12,6 @@ module.exports = {
                 });
                 res.json(msg);
             });
-
         } catch (error) {
             next(error);
         }
