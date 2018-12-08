@@ -18,6 +18,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded( { extended: false } ));
 
 
+// handle static files
+app.use("/public", express.static(path.join(__dirname, "public")));
+
+
 // handle web routes
 app.use("/", require("./routes/index"));
 
@@ -46,13 +50,8 @@ const server = app.listen(app.get("port"), () => {
     console.log("app started on port ", port)
 });
 // start socket
-const io = socket(server);
-// handle connection event
+io = socket(server);
+
 io.on("connection", (socket) => {
-    console.log("a new client connected to server", socket);
-    io.sockets.emit("message", {
-        'welcome': 'a new clinet added',
-    });
+    console.log("a new client connected to server");
 });
-
-
