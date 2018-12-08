@@ -1,0 +1,11 @@
+<h1>View all messages ...</h1>
+
+<div class="messages-box">
+    {{#each messages}}
+        <strong>{{name}}</strong>
+        <p>{{message}}</p>
+        <hr />
+    {{else}}
+        <p class="empty">No Messages yet</p>
+    {{/each}}
+</div>
