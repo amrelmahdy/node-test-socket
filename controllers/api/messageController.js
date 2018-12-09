@@ -18,7 +18,6 @@ module.exports = {
             const msg = new Message(req.body);
             Message.saveMessage(msg, () => {
                 req.app.io.emit("message", msg);
-
                 res.json(msg);
             });
         } catch (error) {
