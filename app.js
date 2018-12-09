@@ -4,10 +4,16 @@ const bodyParser = require("body-parser");
 const socket     = require("socket.io");
 const mongoose   = require("mongoose");
 const hbs = require("express-handlebars");
+const cors = require('cors');
 
 
 
 const app = express();
+
+
+//
+app.use(cors());
+
 // connect to database
 mongoose.connect("mongodb://46.101.151.100/socket-chat", {
     useNewUrlParser: true,
